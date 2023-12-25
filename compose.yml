@@ -1,0 +1,12 @@
+version: "3"
+services:
+  jenkins:
+    container_name: jenkins
+    image: jenkins/jenkins:lts-jdk17
+    restart: always
+    ports:
+      - ${HOST}:80:8080
+    volumes:
+      - ${DATA}:/var/jenkins_home
+
+# Create .env file and set HOST and DATA value for your environment.
